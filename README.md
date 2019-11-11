@@ -7,12 +7,10 @@ Simply said this is inspired from [This post](https://medium.com/@vsimon/how-to-
 
 It automatically finds your display based on your environment variables and the rest is static. it also makes backups, and makes sure it actually changed something before making another patch and backup cycle.
 
-This file only needs the resolution you want filled in the top and then does all the monkeypatching for you, also you need to give the user/group who will use this file write access to both the `/opt/google/chrome-remote-desktop` folder (for backups), and the `/opt/google/chrome-remote-desktop/chrome-remote-desktop --stop` file to actually patch the file.
+This file only needs the resolution you want filled in the top and then does all the monkeypatching for you, sadly, you need root access as Google marks the file with root:root as owner and obviously no one else can write.
 
-opt/google/chrome-remote-desktop/chrome-remote-desktop --start
 ##Requirements
-if it says it isnt even running when trying to stop it no problem, just means it already did what we wanted.
-.just PHP Really, it does not use anything fancy, so it should run on most versions, although you obviously should use a supported version so I just generally say 7.1 or higher for now.
+just PHP Really, it does not use anything fancy, so it should run on most versions, although you obviously should use a supported version so I just generally say 7.1 or higher for now.
 
 ## Usage
 
@@ -34,4 +32,5 @@ then we stop the server, run out patcher and start it again.
 php /path/to/chromeremote.php
 opt/google/chrome-remote-desktop/chrome-remote-desktop --start
 ~~~
+
 if it says it isnt even running when trying to stop it no problem, just means it already did what we wanted.
